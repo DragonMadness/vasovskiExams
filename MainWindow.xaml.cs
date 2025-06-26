@@ -24,5 +24,10 @@ namespace DurkaApp
         {
             InitializeComponent();
         }
+
+        public void OnClick(object sender, RoutedEventArgs e)
+        {
+            InputBox.Text = (long.Parse(InputBox.Text) * 2).ToString();
+        }
     }
 }

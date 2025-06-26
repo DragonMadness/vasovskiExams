@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:DurkaApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock>
+            Удваивалка 10000
+        </TextBlock>
+
+        <TextBox Name="InputBox"/>
+
+        <Button Click="OnClick">
+            Удвоить
+        </Button>
+    </StackPanel>
 </Window>
