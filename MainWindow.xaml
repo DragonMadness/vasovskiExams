@@ -5,8 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DurkaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Window.DataContext>
+        <local:MainWindowData/>
+    </Window.DataContext>
+    
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>
+                Сумма кредита:
+            </TextBlock>
+
+            <TextBox InputScope="Number" Margin="10 0 0 0" MinWidth="30" Text="{Binding Sum}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>
+                Процентная ставка:
+            </TextBlock>
+
+            <TextBox InputScope="Number" Margin="10 0 0 0" MinWidth="30" Text="{Binding InterestRate}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>
+                Срок кредита:
+            </TextBlock>
+
+            <TextBox InputScope="Number" Margin="10 0 0 0" MinWidth="30" Text="{Binding MonthCount}"/>
+        </StackPanel>
+
+        <Button Margin="0 10 0 10" Click="Calculate">
+            Вычислить
+        </Button>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>
+                Итоговая сумма ежемесячной выплаты: 
+            </TextBlock>
+
+            <TextBlock Margin="5 0 0 0" Name="ResultBlock"/>
+        </StackPanel>
+    </StackPanel>
 </Window>

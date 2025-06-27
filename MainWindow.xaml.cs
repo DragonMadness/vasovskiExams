@@ -20,9 +20,31 @@ namespace DurkaApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainWindowData data;
+
         public MainWindow()
         {
             InitializeComponent();
+            data = this.DataContext as MainWindowData;
+        }
+
+        private void Calculate(object sender, RoutedEventArgs e)
+        {
+            ResultBlock.Text = data.GetMontlyPayment().ToString();
+        }
+    }
+
+    public class MainWindowData
+    {
+        public int Sum { get; set; }
+        public int InterestRate { get; set; }
+        public int MonthCount { get; set; }
+        public double Result { get; set; }
+        public MainWindowData() { }
+
+        public double GetMontlyPayment()
+        {
+            return (Sum + Sum * InterestRate / 100) / MonthCount;
         }
     }
 }
