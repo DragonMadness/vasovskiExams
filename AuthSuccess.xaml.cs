@@ -10,27 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DurkaApp
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Window1.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AuthSuccess : Window
     {
-        public MainWindow()
+        public AuthSuccess()
         {
             InitializeComponent();
         }
 
-        private void Login(object sender, RoutedEventArgs e)
+        public void CloseButton(object sender, RoutedEventArgs e)
         {
-            if (LoginBox.Text == "admin" && PasswordBox.Text == "password")
-            {
-                new AuthSuccess().Show();
-            }
+            this.Close();
         }
     }
 }

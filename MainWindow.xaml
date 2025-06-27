@@ -6,7 +6,34 @@
         xmlns:local="clr-namespace:DurkaApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="FrameworkElement" x:Key="base">
+                <Setter Property="Margin" Value="20"/>
+            </Style>
+        </Grid.Resources>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Margin="20 20 20 5">
+                Логин
+            </TextBlock>
+            <TextBox Name="LoginBox"/>
+
+            <TextBlock Margin="20 20 20 5">
+                Пароль
+            </TextBlock>
+            <TextBox Name="PasswordBox"/>
+
+            <Button Margin="0 20 0 0" Click="Login">
+                Войти
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
