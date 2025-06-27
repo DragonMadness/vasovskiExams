@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,39 @@ namespace DurkaApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MainWindowData data;
+
         public MainWindow()
         {
             InitializeComponent();
+            data = this.DataContext as MainWindowData;
+        }
+
+        private void Click(object sender, RoutedEventArgs e)
+        {
+            data.Add();
+        }
+    }
+
+    public class MainWindowData : INotifyPropertyChanged
+    {
+        private int _Count = 0;
+        public int Count {
+            get {
+                return _Count;
+            }
+            private set
+            {
+                _Count = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Count"));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void Add()
+        {
+            Count++;
         }
     }
 }

@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DurkaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <Window.DataContext>
+        <local:MainWindowData/>
+    </Window.DataContext>
+    <StackPanel Margin="20">
+        <Label>
+            <TextBlock>
+                Количество нажатий: <Run Text="{Binding Count, Mode=OneWay}"/>
+            </TextBlock>
+        </Label>
+
+        <Button Click="Click">
+            Нажми на меня
+        </Button>
+    </StackPanel>
 </Window>
