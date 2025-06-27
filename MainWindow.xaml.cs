@@ -24,5 +24,42 @@ namespace DurkaApp
         {
             InitializeComponent();
         }
+
+        private void Solve(object sender, RoutedEventArgs e)
+        {
+            int solution = 0;
+            int arg1 = int.Parse(Arg1.Text);
+            int arg2 = int.Parse(Arg2.Text);
+            switch (Selector.Text)
+            {
+                case "+":
+                    {
+                        solution = arg1 + arg2;
+                        break;
+                    }
+                case "-":
+                    {
+                        solution = arg1 - arg2;
+                        break;
+                    }
+                case "*":
+                    {
+                        solution = arg1 * arg2;
+                        break;
+                    }
+                case "/":
+                    {
+                        solution = arg1 / arg2;
+                        break;
+                    }
+                default:
+                    {
+                        solution = 0;
+                        break;
+                    }
+            }
+
+            Answer.Text = "Результат: " + solution.ToString();
+        }
     }
 }

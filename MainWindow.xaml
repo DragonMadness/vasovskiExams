@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:DurkaApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+        <TextBox Name="Arg1" MinWidth="50"/>
+        <ComboBox Name="Selector">
+            <TextBlock>+</TextBlock>
+            <TextBlock>-</TextBlock>
+            <TextBlock>*</TextBlock>
+            <TextBlock>/</TextBlock>
+        </ComboBox>
+        <TextBox MinWidth="50" Name="Arg2"/>
+        <Button Click="Solve">Вычислить</Button>
+        <TextBlock Name="Answer"/>
+    </StackPanel>
 </Window>
