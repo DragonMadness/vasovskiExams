@@ -24,5 +24,20 @@ namespace DurkaApp
         {
             InitializeComponent();
         }
+
+        public void Calculate(object sender, RoutedEventArgs e)
+        {
+            double Input = 0;
+            try
+            {
+                Input = double.Parse(UserInput.Text);
+            } catch
+            {
+                UserInput.BorderBrush = Brushes.Red;
+                return;
+            }
+            UserInput.BorderBrush = Brushes.DarkGray;
+            AnswerBlock.Text = "Результат: " + (100D / Input);
+        }
     }
 }

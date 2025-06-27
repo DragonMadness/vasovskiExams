@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DurkaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <StackPanel Margin="20">
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBox BorderThickness="0">
+                100 / 
+            </TextBox>
+            <TextBox Name="UserInput" MinWidth="15" BorderThickness="2"/>
+        </StackPanel>
+
+        <TextBlock Margin="10" Name="AnswerBlock"/>
+
+        <Button Margin="10" Click="Calculate">
+            Вычислить
+        </Button>
+    </StackPanel>
 </Window>
